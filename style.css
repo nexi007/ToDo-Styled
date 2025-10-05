@@ -1,0 +1,148 @@
+ body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to bottom, #ffb6b9, #fa748f);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  animation: flyDown 1s ease-out;
+}
+
+.todo-container {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 1.5s ease;
+  width: 300px;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 26px;
+  color: #222;
+}
+
+#counter {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.input-area {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+#todo-input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 150px;
+  transition: 0.3s;
+}
+
+#add-btn {
+  background: #ff6b81;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#add-btn:hover {
+  background: #ff4f69;
+}
+
+#error-msg {
+  color: red;
+  font-size: 13px;
+  height: 18px;
+  margin-top: 8px;
+  animation: blink 0.8s infinite alternate;
+  display: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  text-align: left;
+}
+
+li {
+  background: #f8f8f8;
+  padding: 8px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlide 0.4s forwards;
+}
+
+li.completed {
+  color: gray;
+  text-decoration: line-through;
+  transition: color 0.5s ease;
+}
+
+.delete-btn {
+  position: absolute;
+  right: 10px;
+  top: 6px;
+  cursor: pointer;
+  color: #777;
+  transition: color 0.3s;
+}
+
+.delete-btn:hover {
+  color: #ff4f69;
+}
+
+/* Animations */
+@keyframes flyDown {
+  0% {
+    transform: translateY(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blink {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.3;
+  }
+}
+  
